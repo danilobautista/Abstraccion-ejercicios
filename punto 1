@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+class Vehiculo {
+public:
+    virtual void mover() = 0;
+    virtual void detener() = 0;
+};
+class Coche : public Vehiculo {
+public:
+    void mover() {
+        cout << "El coche esta en movimiento" << endl;
+    }
+    void detener() {
+        cout << "El coche se detuvo" << endl;
+    }
+};
+class Bicicleta : public Vehiculo {
+public:
+    void mover() {
+        cout << "La bicicleta esta en movimiento" << endl;
+    }
+    void detener() {
+        cout << "La bicicleta se detuvo" << endl;
+    }
+};
+int main() {
+
+    Coche c;
+    Bicicleta b;
+
+    c.mover();
+    c.detener();
+
+    b.mover();
+    b.detener();
+
+    return 0;
+}
