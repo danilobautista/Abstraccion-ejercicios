@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class Figura {
+public:
+    virtual void calcular_area() = 0;
+};
+class Circulo : public Figura {
+private:
+    float radio;
+public:
+    Circulo(float r) {
+        radio = r;
+    }
+    void calcular_area() {
+        float area = 3.14 * radio * radio;
+        cout << "El area del circulo es: " << area << endl;
+    }
+};
+class Rectangulo : public Figura {
+private:
+    float base, altura;
+public:
+    Rectangulo(float b, float a) {
+        base = b;
+        altura = a;
+    }
+    void calcular_area() {
+        float area = base * altura;
+        cout << "El area del rectangulo ess: " << area << endl;
+    }
+};
+int main() {
+    Circulo c(5);
+    Rectangulo r(4, 6);
+
+    c.calcular_area();
+    r.calcular_area();
+
+    return 0;
+}
