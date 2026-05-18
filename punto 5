@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+class Empleado {
+public:
+    virtual void calcular_sueldo() = 0;
+};
+class EmpleadoPorHora : public Empleado {
+private:
+    int horas;
+    int pagoHora;
+public:
+    EmpleadoPorHora(int h, int p) {
+        horas = h;
+        pagoHora = p;
+    }
+    void calcular_sueldo() {
+        int sueldo = horas * pagoHora;
+        cout << "El sueldo del empleado por hora ess: " << sueldo << endl;
+    }
+};
+class EmpleadoFijo : public Empleado {
+private:
+    int sueldoFijo;
+public:
+    EmpleadoFijo(int s) {
+        sueldoFijo = s;
+    }
+    void calcular_sueldo() {
+        cout << "El sueldo del empleado fijo ess: " << sueldoFijo << endl;
+    }
+};
+int main() {
+
+    EmpleadoPorHora e1(8, 2000);
+    EmpleadoFijo e2(50000);
+
+    e1.calcular_sueldo();
+    e2.calcular_sueldo();
+
+    return 0;
+}
