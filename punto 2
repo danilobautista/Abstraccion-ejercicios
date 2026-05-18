@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+class Pago {
+public:
+    virtual void procesar_pago() = 0;
+};
+class TarjetaCredito : public Pago {
+public:
+    void procesar_pago() {
+        cout << "Pago realizado con tarjeta de credito nashe" << endl;
+    }
+};
+class PayPal : public Pago {
+public:
+    void procesar_pago() {
+        cout << "Pago realizado con PayPal" << endl;
+    }
+};
+int main() {
+
+    TarjetaCredito t;
+    PayPal p;
+
+    t.procesar_pago();
+    p.procesar_pago();
+
+    return 0;
+}
