@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+class Notificacion {
+public:
+    virtual void enviar() = 0;
+};
+class Email : public Notificacion {
+public:
+    void enviar() {
+        cout << "gg el Email se envió correctamente " << endl;
+    }
+};
+class SMS : public Notificacion {
+public:
+    void enviar() {
+        cout << "El mensaje SMS se envió correctamente" << endl;
+    }
+};
+int main() {
+
+    Email e;
+    SMS s;
+
+    e.enviar();
+    s.enviar();
+
+    return 0;
+}
